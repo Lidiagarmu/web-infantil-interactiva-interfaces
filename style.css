@@ -1,0 +1,152 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #ffcc00;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  background-color: #333; /* Fondo oscuro para la barra de navegación */
+  color: white; /* Texto blanco */
+  padding: 10px 0; /* Espaciado vertical */
+  text-align: center;
+  position: fixed; /* Fijar la barra de navegación en la parte superior */
+  width: 100%;
+  top: 60px; /* Asegura que esté justo debajo del encabezado */
+  z-index: 100; /* Asegura que la barra esté por encima de otros elementos */
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: block; /* Para hacer que todo el área de la pestaña sea clickeable */
+}
+
+nav ul li a:hover {
+  background-color: #ffcc00;
+  color: #333;
+  border-radius: 5px;
+}
+
+.contenido {
+  display: none;
+  margin-top: 150px; /* Asegura que haya espacio suficiente después de la barra de navegación */
+}
+
+section {
+  text-align: center;
+  margin: 20px;
+}
+
+video {
+  width: 50%; /* Ajusta el tamaño del video al 80% del contenedor */
+  max-width: 500px; /* Limita el tamaño máximo del video a 800px */
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Estilo para el modal (ventana emergente) */
+.modal {
+  display: none; /* Inicialmente está oculto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 80%;
+  text-align: center;
+}
+
+button {
+  background-color: #ffcc00;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffb300;
+}
+
+
+
+/* Estilo para la sección de Home */
+#home {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Hace que la sección Home ocupe toda la altura de la ventana */
+  background-image: url('resources/background.avif'); /* Agregar la imagen de fondo */
+  background-size: cover; /* Asegura que la imagen de fondo cubra toda la pantalla */
+  background-position: center; /* Centra la imagen de fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+#home-video {
+  position: relative;
+  z-index: 1; /* El video está por encima de la imagen de fondo */
+  text-align: center;
+}
+
+video {
+  width: 50%;
+  max-width: 500px; /* Limita el tamaño máximo del video */
+  border-radius: 8px;
+  z-index: 2; /* Asegura que el video esté sobre la imagen de fondo */
+}
+
+.contenido {
+  display: none;
+  margin-top: 150px;
+}
+
+h3 {
+  color: white; /* Color del texto sobre el fondo */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para que el texto se vea bien */
+}

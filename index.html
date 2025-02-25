@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos Interactivos para Niños</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Curso Interactivo para Niños</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="mostrarHome()">Home</a></li>
+        <li><a href="#" onclick="mostrarVideos()">Videos</a></li>
+        <li><a href="#" onclick="mostrarAudios()">Audios</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección de Home (pantalla de inicio) -->
+  <section id="home" class="contenido" style="display:block;">
+    <div id="home-video">
+      <h3>Bienvenidos al Curso Interactivo</h3>
+      <video id="video-ninos" width="80%" autoplay loop muted>
+        <source src="resources/ninos.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+      </video>
+    </div>
+  </section>
+
+  <!-- Sección de Videos -->
+  <section id="videos" class="contenido" style="display:none;">
+    <div id="video1">
+      <h3>ABC: Contando</h3>
+      <video id="video-abc" width="80%" controls>
+        <source src="resources/abc.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+      </video>
+    </div>
+    <div id="video2">
+      <h3>Memoria Visual: ¿De qué color es...?</h3>
+      <video id="video-memoria-visual" width="80%" controls>
+        <source src="resources/memoria_visual.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+      </video>
+    </div>
+  </section>
+
+  <!-- Sección de Audios -->
+  <section id="audios" class="contenido" style="display:none;">
+    <h2>Audios</h2>
+    <audio controls>
+      <source src="resources/audio1.mp3" type="audio/mp3">
+      Tu navegador no soporta la etiqueta de audio.
+    </audio>
+    <audio controls>
+      <source src="resources/audio2.mp3" type="audio/mp3">
+      Tu navegador no soporta la etiqueta de audio.
+    </audio>
+  </section>
+
+  <!-- Modal de Cuestionario para Video ABC -->
+  <div id="modal-abc" class="modal">
+    <div class="modal-contenido">
+      <h2>¿Cuántos lápices transportaba el autobús?</h2>
+      <form id="quiz-form-abc">
+        <label>
+          <input type="radio" name="respuesta-abc" value="3"> 3
+        </label><br>
+        <label>
+          <input type="radio" name="respuesta-abc" value="7"> 7
+        </label><br>
+        <label>
+          <input type="radio" name="respuesta-abc" value="ninguno"> 5
+        </label><br><br>
+        <button type="button" onclick="verificarRespuestaABC()">Verificar</button>
+      </form>
+      <div id="resultado-abc"></div>
+      <button onclick="cerrarModalABC()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Modal de Cuestionario para Video Memoria Visual -->
+  <div id="modal-memoria" class="modal">
+    <div class="modal-contenido">
+      <h2>¿De qué color es el libro de una de las niñas?</h2>
+      <form id="quiz-form-memoria">
+        <label>
+          <input type="radio" name="respuesta-memoria" value="rosa"> Rosa
+        </label><br>
+        <label>
+          <input type="radio" name="respuesta-memoria" value="azul"> Azul
+        </label><br>
+        <label>
+          <input type="radio" name="respuesta-memoria" value="negro"> Negro
+        </label><br><br>
+        <button type="button" onclick="verificarRespuestaMemoria()">Verificar</button>
+      </form>
+      <div id="resultado-memoria"></div>
+      <button onclick="cerrarModalMemoria()">Cerrar</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Curso Interactivo para Niños</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
