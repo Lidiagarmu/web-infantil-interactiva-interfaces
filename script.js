@@ -95,4 +95,91 @@ function irACapitulo(segundos) {
   audio.play(); // Reproduce el audio desde ese punto
 }
 
+// Función para cargar los comentarios almacenados en el localStorage
+function cargarComentarios() {
+  let comentariosLista = document.getElementById('comentarios-lista');
+  comentariosLista.innerHTML = '';  // Limpiar la lista antes de cargar
 
+  let comentariosGuardados = JSON.parse(localStorage.getItem('comentarios')) || [];
+  
+  comentariosGuardados.forEach(function(comentario) {
+      let comentarioDiv = document.createElement('div');
+      comentarioDiv.classList.add('comentario');
+      
+      let comentarioContenido = document.createElement('p');
+      comentarioContenido.textContent = comentario.texto;
+      
+      let botonEliminar = document.createElement('button');
+      botonEliminar.textContent = 'Eliminar';
+      botonEliminar.classList.add('eliminar');
+      botonEliminar.onclick = function() {
+          eliminarComentario(comentarioDiv, comentario.texto);
+      };
+      
+      comentarioDiv.appendChild(comentarioContenido);
+      comentarioDiv.appendChild(botonEliminar);
+      comentariosLista.appendChild(comentarioDiv);
+  });
+}
+
+// Función para agregar un comentario
+function agregarComentario() {
+  let comentarioInput = document.getElementById('comentario-input');
+  let comentarioTexto = comentarioInput.value.trim();
+  
+  if (comentarioTexto === "") {
+      alert("Por favor, escribe un comentario.");
+      return;
+  }
+  
+  let comentariosLista = document.getElementById('comentarios-lista');
+  
+  // Crear el div del comentario
+  let comentarioDiv = document.createElement('div');
+  comentarioDiv.classList.add('comentario');
+  
+  // Crear el contenido del comentario
+  let comentarioContenido = document.createElement('p');
+  comentarioContenido.textContent = comentarioTexto;
+  
+  // Crear el botón de eliminar
+  let botonEliminar = document.createElement('button');
+  botonEliminar.textContent = 'Eliminar';
+  botonEliminar.classList.add('eliminar');
+  botonEliminar.onclick = function() {
+      eliminarComentario(comentarioDiv, comentarioTexto);
+  };
+  
+  // Agregar el contenido y el botón de eliminar al div del comentario
+  comentarioDiv.appendChild(comentarioContenido);
+  comentarioDiv.appendChild(botonEliminar);
+  
+  // Añadir el comentario a la lista de comentarios
+  comentariosLista.appendChild(comentarioDiv);
+  
+  // Guardar el comentario en el localStorage
+  let comentariosGuardados = JSON.parse(localStorage.getItem('comentarios')) || [];
+  comentariosGuardados.push({ texto: comentarioTexto });
+  localStorage.setItem('comentarios', JSON.stringify(comentariosGuardados));
+  
+  // Limpiar el campo de texto
+  comentarioInput.value = "";
+}
+
+// Función para eliminar un comentario
+function eliminarComentario(comentarioDiv, textoComentario) {
+  let comentariosLista = document.getElementById('comentarios-lista');
+  
+  // Eliminar el comentario de la interfaz
+  comentariosLista.removeChild(comentarioDiv);
+  
+  // Eliminar el comentario del localStorage
+  let comentariosGuardados = JSON.parse(localStorage.getItem('comentarios')) || [];
+  comentariosGuardados = comentariosGuardados.filter(function(comentario) {
+      return comentario.texto !== textoComentario;
+  });
+  localStorage.setItem('comentarios', JSON.stringify(comentariosGuardados));
+}
+
+// Cargar los comentarios al cargar la página
+window.onload = cargarComentarios;

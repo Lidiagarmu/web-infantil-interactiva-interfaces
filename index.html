@@ -27,10 +27,28 @@
         Tu navegador no soporta la etiqueta de video.
       </video>
     </div>
+
+      <!-- Formulario para añadir comentarios -->
+  <div id="comentarios">
+    <h3>Deja tu comentario:</h3>
+    <textarea id="comentario-input" placeholder="Escribe tu comentario aquí..." rows="4" cols="50"></textarea><br><br>
+    <button onclick="agregarComentario()">Añadir Comentario</button>
+
+    <!-- Área donde se mostrarán los comentarios -->
+    <div id="comentarios-lista">
+      <h3>Comentarios:</h3>
+      <ul id="lista-comentarios"></ul>
+    </div>
+  </div>
   </section>
 
   <!-- Sección de Videos -->
   <section id="videos" class="contenido" style="display:none;">
+    <div id="nube-mensaje">
+      <div class="nube">
+        <p>Al final de cada vídeo deberás responder a una pregunta. ¡Ánimo!</p>
+      </div>
+    </div>
     <div id="video1">
       <h3>ABC: Contando</h3>
       <video id="video-abc" width="80%" controls>
@@ -45,6 +63,7 @@
         Tu navegador no soporta la etiqueta de video.
       </video>
     </div>
+    
   </section>
 
   <!-- Sección de Audios -->
