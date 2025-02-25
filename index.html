@@ -49,15 +49,24 @@
 
   <!-- Sección de Audios -->
   <section id="audios" class="contenido" style="display:none;">
-    <h2>Audios</h2>
-    <audio controls>
-      <source src="resources/audio1.mp3" type="audio/mp3">
+    <h2>Audio</h2>
+    <audio id="audio-saludos" controls>
+      <source src="resources/saludos_ingles.mp3" type="audio/mp3">
       Tu navegador no soporta la etiqueta de audio.
     </audio>
-    <audio controls>
-      <source src="resources/audio2.mp3" type="audio/mp3">
-      Tu navegador no soporta la etiqueta de audio.
-    </audio>
+
+     <!-- Lista de capítulos debajo del reproductor -->
+  <div id="capitulos">
+      <h3>Capítulos:</h3>
+      <ul class="lista-capitulos">
+      <li><a href="javascript:void(0);" onclick="irACapitulo(35)">Capítulo 1: Buenos días </a></li>
+      <li><a href="javascript:void(0);" onclick="irACapitulo(65)">Capítulo 2: Buenas tardes </a></li>
+      <li><a href="javascript:void(0);" onclick="irACapitulo(90)">Capítulo 3: Buenas noches </a></li>
+      <li><a href="javascript:void(0);" onclick="irACapitulo(124)">Capítulo 4: Saludos formales</a></li>
+      <li><a href="javascript:void(0);" onclick="irACapitulo(150)">Capítulo 5: ¿Cómo estás?</a></li>
+    </ul>
+  </div>
+
   </section>
 
   <!-- Modal de Cuestionario para Video ABC -->

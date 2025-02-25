@@ -88,3 +88,11 @@ function mostrarAudios() {
 // Función para hacer que el video "niños.mp4" se reproduzca a la velocidad correcta si es necesario
 videoNinos.playbackRate = 1; // Se puede ajustar según sea necesario para este video
 
+// Función para ir a un capítulo específico del audio
+function irACapitulo(segundos) {
+  var audio = document.getElementById('audio-saludos'); // Obtén el reproductor de audio
+  audio.currentTime = segundos; // Establece el tiempo en segundos
+  audio.play(); // Reproduce el audio desde ese punto
+}
+
+
